@@ -33,7 +33,7 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, width, height, ra
     this.lineTo(x + cornerRadius.lowerLeft, y + height);
     this.quadraticCurveTo(x, y + height, x, y + height - cornerRadius.lowerLeft);
     this.lineTo(x, y + cornerRadius.upperLeft);
-    this.quadraticCurveTo(x, y, x + cornerRadius.upperLeft, y);
+    this.quadraticCurveTo(x, y, x + cornerRadius.upperLeft, y + 1);
     this.closePath();
 };
 
