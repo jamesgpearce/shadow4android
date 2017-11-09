@@ -27,13 +27,13 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, width, height, ra
     this.beginPath();
     this.moveTo(x + cornerRadius.upperLeft, y);
     this.lineTo(x + width - cornerRadius.upperRight, y);
-    this.quadraticCurveTo(x + width, y, x + width, y + cornerRadius.upperRight);
+    this.arcTo(x + width, y, x + width, y + cornerRadius.upperRight, cornerRadius.upperRight);
     this.lineTo(x + width, y + height - cornerRadius.lowerRight);
-    this.quadraticCurveTo(x + width, y + height, x + width - cornerRadius.lowerRight, y + height);
+    this.arcTo(x + width, y + height, x + width - cornerRadius.lowerRight, y + height, cornerRadius.lowerRight);
     this.lineTo(x + cornerRadius.lowerLeft, y + height);
-    this.quadraticCurveTo(x, y + height, x, y + height - cornerRadius.lowerLeft);
+    this.arcTo(x, y + height, x, y + height - cornerRadius.lowerLeft, cornerRadius.lowerLeft);
     this.lineTo(x, y + cornerRadius.upperLeft);
-    this.quadraticCurveTo(x, y, x + cornerRadius.upperLeft, y);
+    this.arcTo(x, y, x + cornerRadius.upperLeft, y, cornerRadius.upperLeft);
     this.closePath();
 };
 
